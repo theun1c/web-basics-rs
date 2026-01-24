@@ -1,16 +1,11 @@
-#[macro_use] extern crate nickel;
+use std::fs::File;
 
-use nickel::Nickel;
+fn main() -> Result<(), std::io::Error>{ 
+    let mut file = match File::create("Hello.txt") {
+        Ok(f) => f,
+        Err(e) => return Err(e), // ru: чтобы вернуть Result Err 
+        // нужно использовать -> Result<(), std::io::Error в main
+    };
 
-fn main() {
-    let mut server = Nickel::new();
-
-    server.utilize(router! {
-        get "**" => |_req, _res| {
-            "Hello world!"
-        }
-    });
-
-    server.listen("127.0.0.1:6767");
+    Ok(())
 }
-
