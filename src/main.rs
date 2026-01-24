@@ -1,11 +1,31 @@
 use std::fs::File;
 
-fn main() -> Result<(), std::io::Error>{ 
-    let mut file = match File::create("Hello.txt") {
-        Ok(f) => f,
-        Err(e) => return Err(e), // ru: чтобы вернуть Result Err 
-        // нужно использовать -> Result<(), std::io::Error в main
-    };
+// logger path
+const LOG_PATH: &str = "./logger/logger_file.txt";
 
-    Ok(())
+// creating a file in the logger folder
+fn create_logger_file(){
+    match File::create(LOG_PATH){
+        Ok(..) => println!("succsesful create file!"),
+        Err(..) => println!("error while create a file!")
+    };
+}
+
+// red highlight 
+fn error_log(){
+
+}
+
+// greem highlight
+fn succesful_log(){
+
+}
+
+// yellow highlight
+fn warn_log(){ 
+
+}
+
+fn main() { 
+    create_logger_file();
 }
