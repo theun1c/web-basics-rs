@@ -1,37 +1,43 @@
 use std::{fs::File, io::Write, time::SystemTime};
+use once_cell::sync::OnceCell;
 
 // logger path
-const LOG_PATH: &str = "./logger/logger_file.txt";
+const LOGGER_PATH: &str = "./logger/logger_file.txt";
 
-// creating a file in the logger folder
-fn create_logger_file(){
-    match File::create(LOG_PATH){
-        Ok(..) => println!("succsesful create file!"),
-        Err(..) => println!("error while create a file!")
-    };
+struct Logger {
+
 }
 
-// red highlight 
-fn error_log(text: &str, mut file: File){
-    let time = SystemTime::now();
-    let format_str = format!("{:?} | ERROR | {}", time, text);
-    file.write_all(format_str.as_bytes());
+static LOGGER: OnceCell<Logger> = OnceCell::new();
+
+impl Logger{
+    fn new() -> Self {
+        Logger {}
+    }
+
+    fn log(&self, text: &str, level: &str){
+        let time = SystemTime::now();
+        println!("{:?} | {} | {}", time, level, text);
+    }
+
+    fn error(&self, text: &str) {
+        self.log(text, "ERROR");
+    }
+
+    fn warn(&self, text: &str){
+        self.log(text, "WARN");
+    }
+
+    fn success(&self, text: &str){
+        self.log(text, "SUCCESS");
+    }
 }
 
-// greem highlight
-fn succesful_log(text: &str, mut file: File){
-    let time = SystemTime::now();
-    let format_str = format!("{:?} | WARN | {}", time, text);
-    file.write_all(format_str.as_bytes());
-}
-
-// yellow highlight
-fn warn_log(text: &str, mut file: File){ 
-    let time = SystemTime::now();
-    let format_str = format!("{:?} | SUCCSES | {}", time, text);
-    file.write_all(format_str.as_bytes());
+pub fn get_logger() -> &'static Logger{
+    LOGGER.get_or_init(|| Logger::new())
 }
 
 fn main() { 
-    create_logger_file();
+    let logger = get_logger();
+    logger.error("some error");
 }
