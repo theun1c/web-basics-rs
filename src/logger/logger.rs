@@ -1,30 +1,39 @@
-use std::{fs::File, io::Write};
+use std::{cell::RefCell, fs::{File, OpenOptions}, io::Write};
 use chrono::Local;
 
 // logger path
-const LOGGER_PATH: &str = "./logger/logger_file.txt";
+const LOGGER_PATH: &str = "logger/logger_file.txt";
 
-pub struct Logger {}
+pub struct Logger {
+    file: RefCell<File>,
+}
 
 impl Logger{
-    pub fn new() -> Self {
-        Logger {}
+    pub fn new() -> std::io::Result<Self> {
+        let file = OpenOptions::new()
+            .create(true)
+            .append(true)
+            .write(true)
+            .open(LOGGER_PATH)?;
+        Ok(Logger { file: RefCell::new(file) })
     }
 
     fn log(&self, text: &str, level: &str){
         let time = Local::now();
-        println!("{} | {} | {}", time.format("%Y.%m.%d %H:%M:%S"), level, text);
+        let log_msg = format!("{} | {:<7} | {}\n", time.format("%Y.%m.%d %H:%M:%S"), level, text);
+        let mut file = self.file.borrow_mut();
+        file.write_all(log_msg.as_bytes());
     }
 
     pub fn error(&self, text: &str) {
         self.log(text, "ERROR");
     }
 
-    pub fn warn(&self, text: &str){
+    pub fn warn(&mut self, text: &str){
         self.log(text, "WARN");
     }
 
-    pub fn success(&self, text: &str){
+    pub fn success(&mut self, text: &str){
         self.log(text, "SUCCESS");
     }
 }
