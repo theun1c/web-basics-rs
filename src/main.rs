@@ -1,4 +1,5 @@
 use std::{fs::File, io::Write, time::SystemTime};
+use chrono::Local;
 use once_cell::sync::OnceCell;
 
 // logger path
@@ -16,8 +17,8 @@ impl Logger{
     }
 
     fn log(&self, text: &str, level: &str){
-        let time = SystemTime::now();
-        println!("{:?} | {} | {}", time, level, text);
+        let time = Local::now();
+        println!("{} | {} | {}", time.format("%Y.%m.%d %H:%M:%S"), level, text);
     }
 
     fn error(&self, text: &str) {
