@@ -2,7 +2,7 @@ mod logger;
 use once_cell::sync::OnceCell;
 use logger::Logger;
 use yew::prelude::*;
-use std::sync::Mutex;
+use std::{str, sync::Mutex};
 
 static LOGGER: OnceCell<Mutex<Logger>> = OnceCell::new();
 
@@ -13,10 +13,33 @@ pub fn get_logger() -> &'static Mutex<Logger>{
     })
 }
 
+#[derive(Clone, PartialEq)]
+struct Person {
+    id: u16, 
+    name: AttrValue
+}
+
 #[component]
 fn app() -> Html {
+    let persons  = vec![
+        Person{
+            id: 1,
+            name: "dima".into()
+        },
+        Person{
+            id: 2,
+            name: "dima2".into()
+        }
+    ];
     html! {
-        <h1>{"Hello world"}</h1>
+        <>
+            <h1>{"Hello, world!"}</h1>
+            <div>
+                for person in &persons {
+                    <p>{ format!("{} {}", person.id, person.name) }</p>
+                }
+            </div>
+        </>
     }
 }
 
