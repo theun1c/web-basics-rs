@@ -2,7 +2,7 @@ use std::{cell::RefCell, fs::{File, OpenOptions}, io::Write};
 use chrono::Local;
 
 // logger path
-const LOGGER_PATH: &str = "logger/logger_file.txt";
+const LOGGER_PATH: &str = "logs/logs.txt";
 
 pub struct Logger {
     file: RefCell<File>,
