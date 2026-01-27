@@ -1,3 +1,11 @@
 [serve]
 address = "127.0.0.1"
 port = 8080
+
+[build]
+target = "index.html"
+dist = "dist"
+public-url = "/web-basics-rs/"  # измените на имя вашего репозитория
+
+[build.release]
+inject_scripts = false  # отключает integrity hashes
