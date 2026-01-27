@@ -1,6 +1,5 @@
 mod logger;
-use yew::{callback, prelude::*};
-use crate::logger::logger::get_logger;
+use yew::prelude::*;
 
 #[derive(Clone, PartialEq)]
 struct Video {
@@ -71,7 +70,7 @@ fn App() -> Html {
 
     html! {
         <>
-            <h1 class="test>{"Hello, world!"}</h1>
+            <h1 class="test">{"Hello, world!"}</h1>
 
             <div>
                 <VideoList {videos} on_click={on_video_select}/> 
@@ -85,11 +84,5 @@ fn App() -> Html {
 }
 
 fn main() { 
-
-    #[cfg(not(target_arch = "wasm32"))]{
-        let mut logger = get_logger().lock().unwrap();
-        logger.success("запуск не wasm");
-    }
-
     yew::Renderer::<App>::new().render();
 }
