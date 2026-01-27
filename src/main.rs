@@ -1,36 +1,46 @@
 mod logger;
-use once_cell::sync::OnceCell;
-use logger::Logger;
 use yew::prelude::*;
-use std::{str, sync::Mutex};
 use crate::logger::logger::get_logger;
 
-
 #[derive(Clone, PartialEq)]
-struct Person {
-    id: u16, 
-    name: AttrValue
+struct Video {
+    title: AttrValue, 
+    url: AttrValue
+}
+
+#[derive(Properties, PartialEq)]
+struct  VideoListProps {
+    videos: Vec<Video>
 }
 
 #[component]
-fn app() -> Html {
-    let persons  = vec![
-        Person{
-            id: 1,
-            name: "dima".into()
-        },
-        Person{
-            id: 2,
-            name: "dima2".into()
+fn VideoList(VideoListProps { videos }: &VideoListProps) -> Html {
+    html!{
+        for video in videos {
+            <p> { format!("{} {}", video.title, video.url) } </p>
         }
+    }
+}
+
+
+#[component]
+fn App() -> Html {
+    let videos = vec![
+        Video{
+            title: "title 1".into(),
+            url: "url 1".into()
+        },
+        Video{
+            title: "title 2".into(),
+            url: "url 2".into()
+        },
     ];
     html! {
         <>
             <h1>{"Hello, world!"}</h1>
+
             <div>
-                for person in &persons {
-                    <p>{ format!("{} {}", person.id, person.name) }</p>
-                }
+                <VideoList {videos}/> 
             </div>
         </>
     }
@@ -43,5 +53,5 @@ fn main() {
         logger.success("запуск не wasm");
     }
 
-    yew::Renderer::<app>::new().render();
+    yew::Renderer::<App>::new().render();
 }
