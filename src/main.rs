@@ -1,5 +1,5 @@
 mod logger;
-use yew::prelude::*;
+use yew::{callback, prelude::*};
 use crate::logger::logger::get_logger;
 
 #[derive(Clone, PartialEq)]
@@ -10,14 +10,37 @@ struct Video {
 
 #[derive(Properties, PartialEq)]
 struct  VideoListProps {
-    videos: Vec<Video>
+    videos: Vec<Video>,
+    on_click: Callback<Video>
+}
+
+#[derive(Properties, PartialEq)]
+struct VideosDetailsProps {
+    video: Video,
 }
 
 #[component]
-fn VideoList(VideoListProps { videos }: &VideoListProps) -> Html {
+fn VideoDetails(VideosDetailsProps { video}: &VideosDetailsProps) -> Html {
+    html! {
+        <div>
+            <h3>{ &*video.title }</h3>
+            <h5>{ &*video.url }</h5>
+        </div>
+    }
+}
+
+#[component]
+fn VideoList(VideoListProps { videos , on_click}: &VideoListProps) -> Html {
+    let on_selected = |video: &Video| {
+        let on_click = on_click.clone();
+        let video = video.clone();
+        Callback::from(move |_| {
+            on_click.emit(video.clone())
+        })
+    };
     html!{
         for video in videos {
-            <p> { format!("{} {}", video.title, video.url) } </p>
+            <p onclick={on_selected(video)}> { format!("{} {}", video.title, video.url) } </p>
         }
     }
 }
@@ -35,13 +58,28 @@ fn App() -> Html {
             url: "url 2".into()
         },
     ];
+
+    let selected_video = use_state(|| None);
+    
+    let on_video_select = {
+        let selected_video = selected_video.clone();
+        Callback::from(move |video: Video| {
+            selected_video.set(Some(video));
+        } )
+    };
+
+
     html! {
         <>
             <h1>{"Hello, world!"}</h1>
 
             <div>
-                <VideoList {videos}/> 
+                <VideoList {videos} on_click={on_video_select}/> 
             </div>
+
+            if let Some(video) = &*selected_video {
+                <VideoDetails video={video.clone()}/>
+            }
         </>
     }
 }
