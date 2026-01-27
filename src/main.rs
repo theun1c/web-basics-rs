@@ -71,7 +71,7 @@ fn App() -> Html {
 
     html! {
         <>
-            <h1>{"Hello, world!"}</h1>
+            <h1 class="test>{"Hello, world!"}</h1>
 
             <div>
                 <VideoList {videos} on_click={on_video_select}/> 
