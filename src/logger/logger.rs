@@ -1,8 +1,10 @@
 use std::{cell::RefCell, fs::{File, OpenOptions}, io::Write};
 use chrono::Local;
+use once_cell::sync::OnceCell;
+use std::{str, sync::Mutex};
 
 // logger path
-const LOGGER_PATH: &str = "logger/logger_file.txt";
+const LOGGER_PATH: &str = "logs/logs.txt";
 
 pub struct Logger {
     file: RefCell<File>,
@@ -39,3 +41,11 @@ impl Logger{
 }
 
 
+static LOGGER: OnceCell<Mutex<Logger>> = OnceCell::new();
+
+pub fn get_logger() -> &'static Mutex<Logger>{
+    LOGGER.get_or_init(|| {
+        let logger = Logger::new().expect("logger creating error");
+        Mutex::new(logger)
+    })
+}
