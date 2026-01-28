@@ -11,7 +11,7 @@ Here's a small preview and my rough draft of the home page.
 ## 🦖 TODO`s
 
 - Edit project tree (reconsider the architecture)
-- Implement the visual design of the main page based on the [layout](repo_assets/excalidraw/welcome-page.excalidraw) 
+- Implement the visual design of the main page based on the [layout](docs/excalidraw/welcome-page.excalidraw) 
 - Design a string parser (think through the main functionality of the site)
 
 ## 🐳 Deploy
