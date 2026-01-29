@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readle</title>
+    <link rel="stylesheet" href="./style-e2d9d524a70b914b.css" integrity="sha384-m63b6AKnr7AAwQNQp5vRj5D8J1XajijeOKuOkrAZn8jQLGmBYYoAgP/PeR2amjVZ"/>
+<link rel="modulepreload" href="./web-basics-rs-dcb575d58bd28ed8.js" crossorigin="anonymous" integrity="sha384-aYOyDb0UOIekFCSyXOXIF3hVrPhU6G1hEfB3s8FS89YWuTNkCiA3xry0TUVgmzNk"><link rel="preload" href="/web-basics-rs-dcb575d58bd28ed8_bg.wasm" crossorigin="anonymous" integrity="sha384-M5YyY7v9L84iGE24oXlwdwQDskwvWVkIW/G5/C04o+O+BfUli/h7z2s8B1kSf5CK" as="fetch" type="application/wasm"></head>
+<body>
+
+<script type="module">
+import init, * as bindings from './web-basics-rs-dcb575d58bd28ed8.js';
+const wasm = await init({ module_or_path: './web-basics-rs-dcb575d58bd28ed8_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>
