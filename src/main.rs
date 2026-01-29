@@ -61,6 +61,18 @@ fn MainTitle() -> Html {
     }
 }
 
+//
+// component for input field
+#[component]
+fn InputField() -> Html {
+    html! {
+        <>
+            
+        </>
+    }
+}
+
+
 #[component]
 fn App() -> Html {
 
