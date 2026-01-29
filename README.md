@@ -16,8 +16,9 @@ Here's a small preview and my rough draft of the home page.
 
 ## 🐳 Deploy
 
-For deployment I used the following command: ``` trunk build --release --dist docs --public-url /web-basics-rs/``` (now docs is build folder).
-This command created a *dist* folder with files that I moved to a separate created branch
+For deployment I used the following command: ``` trunk build ```. 
+This command created a *docs* folder with files that I moved to a separate created branch.
+All command settings are in the file [Trunk.toml](Trunk.toml)
 
 The application deployment is implemented in the [gh-pages](https://github.com/theun1c/web-basics-rs/tree/gh-pages) branch.
 
