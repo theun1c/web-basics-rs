@@ -44,14 +44,18 @@ fn VideoList(VideoListProps { videos , on_click}: &VideoListProps) -> Html {
     }
 }
 
+
+
 // 
 // Component for main title 
 #[component]
 fn MainTitle() -> Html {
     html! {
         <>
-            <div class="main-title_text">
-                {"\"Hello, World!\""}
+            <div class="container">     
+                <div class="main-title_text">
+                    {"\"Hello, World!\""}
+                </div>
             </div>
         </>
     }

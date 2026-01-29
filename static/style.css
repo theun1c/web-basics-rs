@@ -1,9 +1,25 @@
+/* add virgil font */
 @font-face {
     font-family: Virgil;
     src: url(https://excalidraw.nyc3.cdn.digitaloceanspaces.com/fonts/Virgil.woff2);
 }
 
+/* container style */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* main text style */
 .main-title_text {
     color: black;
     font-family: 'Virgil';
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 100px;
 }
+
+
