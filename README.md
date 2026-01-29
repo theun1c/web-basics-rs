@@ -6,17 +6,17 @@ I came up with an idea for a small web app to track my reading. The idea is that
 
 Here's a small preview and my rough draft of the home page.
 
-![alt text](docs/assets/image.png)
+![alt text](materials/assets/image.png)
 
 ## 🦖 TODO`s
 
 - Edit project tree (reconsider the architecture)
-- Implement the visual design of the main page based on the [layout](docs/excalidraw/welcome-page.excalidraw) 
+- Implement the visual design of the main page based on the [layout](materials/excalidraw/welcome-page.excalidraw) 
 - Design a string parser (think through the main functionality of the site)
 
 ## 🐳 Deploy
 
-For deployment I used the following command: ``` trunk build --release ``` .
+For deployment I used the following command: ``` trunk build --release --dist docs``` (now docs is build folder).
 This command created a *dist* folder with files that I moved to a separate created branch
 
 The application deployment is implemented in the [gh-pages](https://github.com/theun1c/web-basics-rs/tree/gh-pages) branch.
