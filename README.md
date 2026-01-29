@@ -11,8 +11,15 @@ Here's a small preview and my rough draft of the home page.
 ## 🦖 TODO`s
 
 - Edit project tree (reconsider the architecture)
-- Implement the visual design of the main page based on the [layout](materials/excalidraw/welcome-page.excalidraw) 
-- Design a string parser (think through the main functionality of the site)
+- Design a string parser (think through the main functionality of the site): 
+    ```
+    // TODO: You can enter from which page to which page you read
+    // like 10-23 - This means that you have read 13 pages. 
+    //
+    // TODO: Also, if you entered an empty time, you can enter a default value based on past readings
+    // (you just need to find out how long it takes a person to read 1 page on average)
+    // component for text field
+    ```
 
 ## 🐳 Deploy
 
