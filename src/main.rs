@@ -24,6 +24,7 @@ fn MainTitle() -> Html {
 //
 // TODO: Also, if you entered an empty time, you can enter a default value based on past readings
 // (you just need to find out how long it takes a person to read 1 page on average)
+// component for text field
 #[component]
 fn InputField() -> Html {
     html! {
@@ -47,7 +48,6 @@ fn App() -> Html {
             <InputField/>
         </>
     }
-
 }
 
 
