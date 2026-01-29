@@ -1,3 +1,9 @@
+@font-face {
+    font-family: Virgil;
+    src: url(https://excalidraw.nyc3.cdn.digitaloceanspaces.com/fonts/Virgil.woff2);
+}
+
 .main-title_text {
     color: black;
+    font-family: 'Virgil';
 }
