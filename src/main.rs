@@ -44,44 +44,64 @@ fn VideoList(VideoListProps { videos , on_click}: &VideoListProps) -> Html {
     }
 }
 
-
+// 
+// Component for main title 
 #[component]
-fn App() -> Html {
-    let videos = vec![
-        Video{
-            title: "title 1".into(),
-            url: "url 1".into()
-        },
-        Video{
-            title: "title 2".into(),
-            url: "url 2".into()
-        },
-    ];
-
-    let selected_video = use_state(|| None);
-    
-    let on_video_select = {
-        let selected_video = selected_video.clone();
-        Callback::from(move |video: Video| {
-            selected_video.set(Some(video));
-        } )
-    };
-
-
+fn MainTitle() -> Html {
     html! {
         <>
-            <h1 class="test">{"Hello, world!"}</h1>
-
-            <div>
-                <VideoList {videos} on_click={on_video_select}/> 
+            <div class="main-title_text">
+                {"\"Hello, World!\""}
             </div>
-
-            if let Some(video) = &*selected_video {
-                <VideoDetails video={video.clone()}/>
-            }
         </>
     }
 }
+
+#[component]
+fn App() -> Html {
+
+    html! {
+        <>
+            <MainTitle/>
+        </>
+    }
+
+    // let videos = vec![
+    //     Video{
+    //         title: "title 1".into(),
+    //         url: "url 1".into()
+    //     },
+    //     Video{
+    //         title: "title 2".into(),
+    //         url: "url 2".into()
+    //     },
+    // ];
+
+    // let selected_video = use_state(|| None);
+    
+    // let on_video_select = {
+    //     let selected_video = selected_video.clone();
+    //     Callback::from(move |video: Video| {
+    //         selected_video.set(Some(video));
+    //     } )
+    // };
+
+
+    // html! {
+    //     <>
+    //         <h1 class="test">{"Hello, world!"}</h1>
+
+    //         <div>
+    //             <VideoList {videos} on_click={on_video_select}/> 
+    //         </div>
+
+    //         if let Some(video) = &*selected_video {
+    //             <VideoDetails video={video.clone()}/>
+    //         }
+    //     </>
+    // }
+}
+
 
 fn main() { 
     yew::Renderer::<App>::new().render();
