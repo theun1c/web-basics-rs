@@ -16,7 +16,7 @@ Here's a small preview and my rough draft of the home page.
 
 ## 🐳 Deploy
 
-For deployment I used the following command: ``` trunk build --release ``` .
+For deployment I used the following command: ``` trunk build --release --dist docs``` .
 This command created a *dist* folder with files that I moved to a separate created branch
 
 The application deployment is implemented in the [gh-pages](https://github.com/theun1c/web-basics-rs/tree/gh-pages) branch.
