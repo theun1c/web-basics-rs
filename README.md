@@ -25,7 +25,8 @@ Here's a small preview and my rough draft of the home page.
 
 For deployment I used the following command: ``` trunk build ```. 
 This command created a *docs* folder with files that I moved to a separate created branch.
-All command settings are in the file [Trunk.toml](Trunk.toml)
+All command settings are in the file [Trunk.toml](Trunk.toml).
+Deployment is performed using GitHub Actions.
 
 The application deployment is implemented in the [main](https://github.com/theun1c/web-basics-rs/tree/main) branch - [docs](https://github.com/theun1c/web-basics-rs/tree/main/docs) folder.
 
