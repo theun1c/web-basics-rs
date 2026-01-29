@@ -1,0 +1,4 @@
+[build]
+release = true
+dist="docs"
+public_url = "/web-basics-rs/"
