@@ -20,7 +20,7 @@ For deployment I used the following command: ``` trunk build ```.
 This command created a *docs* folder with files that I moved to a separate created branch.
 All command settings are in the file [Trunk.toml](Trunk.toml)
 
-The application deployment is implemented in the [gh-pages](https://github.com/theun1c/web-basics-rs/tree/gh-pages) branch.
+The application deployment is implemented in the [main](https://github.com/theun1c/web-basics-rs/tree/main) branch.
 
 Also available at this [link](https://theun1c.github.io/web-basics-rs/) 
 
