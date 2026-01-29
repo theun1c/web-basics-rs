@@ -1,5 +1,10 @@
-/* font */
+/* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
 
 /* container style */
 .container {
@@ -23,5 +28,13 @@
 
 /* text field for main page */
 .text-field_main {
-    
+    margin-top: 6.25rem;
+    border-radius: 1.25rem;
+    width: 60%;
+    padding: 1rem 1.25rem;
+    outline: none;
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: normal;
+    border: solid black 2px;
 }
