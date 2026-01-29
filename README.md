@@ -34,5 +34,5 @@ Also available at this [link](https://theun1c.github.io/web-basics-rs/)
 
 ## 🐓 Author
 
-### still me [theun1c](https://github.com/theun1c) =)
+#### still me [theun1c](https://github.com/theun1c) =)
 
