@@ -73,7 +73,11 @@ fn MainTitle() -> Html {
 fn InputField() -> Html {
     html! {
         <>
-            <input type="text" placeholder="Book / Author / Pages / Time"/>
+        
+            <div class="container">
+                <input type="text" class="text-field_main" placeholder="Book / Author / Pages / Time"/>
+            </div>
+
         </>
     }
 }
