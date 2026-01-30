@@ -35,8 +35,6 @@
     text-align: center;
     margin-top: 6.25rem;
     font-weight: bold;
-
-    /* Только нижняя тень */
     text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 
