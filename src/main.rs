@@ -3,7 +3,8 @@ mod components; // берут названия с папок в которых �
 use yew::prelude::*;
 use components::main_title::MainTitle; // обращаемся к подключенному моду
 // обращаемся к названию файла этого мода и к компоненту в этом файле
-use components::input_field::InputField;
+use components::text_fields::input_field::InputField;
+use components::buttons::basic_button::BasicButton;
 
 #[component]
 fn App() -> Html {
@@ -12,7 +13,11 @@ fn App() -> Html {
         <>
             <MainTitle/>
 
-            <InputField/>
+            <div class="input_row_container">
+                <InputField/>
+                <BasicButton/>
+            </div>
+            
         </>
     }
 }

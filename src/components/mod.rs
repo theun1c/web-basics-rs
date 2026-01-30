@@ -1,2 +1,3 @@
 pub mod main_title;
-pub mod input_field;
+pub mod text_fields;
+pub mod buttons;
