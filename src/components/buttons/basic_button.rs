@@ -6,8 +6,8 @@ use yew::prelude::*;
 pub fn BasicButton() -> Html {
     html! {
         <>
-            <button class="">
-                {"Push me"}
+            <button class="basic-button">
+                {"add"}
             </button>
         </>
     }
