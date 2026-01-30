@@ -13,10 +13,7 @@ use yew::prelude::*;
 pub fn InputField() -> Html {
     html! {
         <>
-            <div class="container">
-                <input type="text" class="text-field_main" placeholder="Book / Author / Pages / Time"/>
-            </div>
-            
+            <input type="text" class="text-field_main" placeholder="Book / Author / Pages / Time"/>
         </>
     }
 }
