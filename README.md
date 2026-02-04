@@ -16,7 +16,7 @@ Version 0.2 (excalidraw)
 
 ## 🦖 TODO`s
 
-- Edit project tree (reconsider the architecture)
+- Update and implement the card design
 - Design a string parser (think through the main functionality of the site): 
     ```
     // TODO: You can enter from which page to which page you read
@@ -26,6 +26,7 @@ Version 0.2 (excalidraw)
     // (you just need to find out how long it takes a person to read 1 page on average)
     // component for text field
     ```
+- Outputting information to a card (refers to the string parser)
 
 ## 🐳 Deploy
 
