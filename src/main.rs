@@ -10,6 +10,7 @@ use components::cards::colored_card::ColoredCard;
 #[component]
 fn App() -> Html {
 
+
     html! {
         <>
             <MainTitle/>
@@ -18,8 +19,19 @@ fn App() -> Html {
                 <InputField/>
                 <BasicButton/>
             </div>
+
+            <div class="container" style="margin-top: 1.5rem;">
+                <ColoredCard bg_color="#a8e3b3" bgb_color="#2f9646"/>
+            </div>
+
+            <div class="container" style="margin-top: 1.5rem;">
+                <ColoredCard bg_color="#eedc92" bgb_color="#e08405"/>
+            </div>
             
-            <ColoredCard/>
+            <div class="container" style="margin-top: 1.5rem;">
+                <ColoredCard bg_color="#eebcbe" bgb_color="#d13032"/>
+            </div>
+
         </>
     }
 }
