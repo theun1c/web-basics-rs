@@ -6,7 +6,13 @@ I came up with an idea for a small web app to track my reading. The idea is that
 
 Here's a small preview and my rough draft of the home page.
 
+Version 0.1 (excalidraw)
+
 ![alt text](materials/assets/image.png)
+
+Version 0.2 (excalidraw)
+
+![alt text](materials/assets/main_p2.png)
 
 ## 🦖 TODO`s
 
