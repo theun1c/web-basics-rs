@@ -6,11 +6,17 @@ I came up with an idea for a small web app to track my reading. The idea is that
 
 Here's a small preview and my rough draft of the home page.
 
+Version 0.1 (excalidraw)
+
 ![alt text](materials/assets/image.png)
+
+Version 0.2 (excalidraw)
+
+![alt text](materials/assets/main_p2.png)
 
 ## 🦖 TODO`s
 
-- Edit project tree (reconsider the architecture)
+- Update and implement the card design
 - Design a string parser (think through the main functionality of the site): 
     ```
     // TODO: You can enter from which page to which page you read
@@ -20,6 +26,7 @@ Here's a small preview and my rough draft of the home page.
     // (you just need to find out how long it takes a person to read 1 page on average)
     // component for text field
     ```
+- Outputting information to a card (refers to the string parser)
 
 ## 🐳 Deploy
 

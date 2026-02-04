@@ -1298,6 +1298,7 @@ dependencies = [
  "chrono",
  "once_cell",
  "yew 0.22.0",
+ "yew-autoprops",
  "yew-interop",
 ]
 
@@ -1427,6 +1428,17 @@ dependencies = [
  "wasm-bindgen-futures",
  "web-sys",
  "yew-macro 0.22.0",
+]
+
+[[package]]
+name = "yew-autoprops"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "58865a8f2470a6ad839274e05c9627170d32930f39a2348f8c425880a6131792"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.114",
 ]
 
 [[package]]
