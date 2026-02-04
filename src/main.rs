@@ -5,6 +5,7 @@ use components::main_title::MainTitle; // обращаемся к подключ
 // обращаемся к названию файла этого мода и к компоненту в этом файле
 use components::text_fields::input_field::InputField;
 use components::buttons::basic_button::BasicButton;
+use components::cards::colored_card::ColoredCard;
 
 #[component]
 fn App() -> Html {
@@ -18,6 +19,7 @@ fn App() -> Html {
                 <BasicButton/>
             </div>
             
+            <ColoredCard/>
         </>
     }
 }
